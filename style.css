@@ -1,6 +1,6 @@
 :root{  /*declares global variable*/
-    --GRIDSIZE: 16;
-    --PIXELSIZE: 40px;
+    --GRID_SIZE: 16;
+    --PIXEL_SIZE: 40px;
 }
 
 body{
@@ -15,9 +15,10 @@ body{
 
 #grid{
     display: grid;
-    grid-template-columns: repeat(var(--GRIDSIZE), var(--PIXELSIZE));
-    grid-template-rows: repeat(var(--GRIDSIZE), var(--PIXELSIZE));
-    
+
+    grid-template-columns: repeat(var(--GRID_SIZE), var(--PIXEL_SIZE));
+    grid-template-rows: repeat(var(--GRID_SIZE), var(--PIXEL_SIZE));
+
     width: 640px;
     height: 640px;
 
@@ -34,15 +35,17 @@ body{
 
 .pixel{
     background-color: white;
-    border-color: black;
-    border-style: dotted;
-    border-width: 1px;
 }
 
 #pad_bottom{
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     width: 640px;
+    min-height: 100px;
+    background-color: red;
 
     border: solid;
     border-color: red;
@@ -53,9 +56,23 @@ body{
     border-top-width: 0px;
     border-left-width: 20px;
     border-right-width: 20px;
-    border-bottom-width: 100px;
+    border-bottom-width: 0px;
 }
 
 #clear_grid{
-    
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 30px;
+    background-color: white;
+    border-radius: 8px;
+    border-style: ridge;
+}
+
+#clear_grid:hover{
+    background-color: rgb(235, 235, 235);
+}
+
+#clear_grid:active{
+    box-shadow: 0 3px #666;
+    transform: translateY(2px);
 }
