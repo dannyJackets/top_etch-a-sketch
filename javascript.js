@@ -1,5 +1,5 @@
 const MAX_DIMENSION = 640;  //max pixel dimension to fit in etch pad
-var GRID = 16*16; //global grid size value
+let GRID = 16*16; //global grid size value
 
 
 generatePixels();
@@ -12,7 +12,7 @@ function drawing(e){
 
 function erase(){   //erase colored pixels and start prompt for new size
     const pixels = document.getElementsByClassName("pixel");
-    for(j = 0; j < GRID; j++){
+    for(let j = 0; j < GRID; j++){
         pixels[j].style.backgroundColor = "white";
     }
     newDimensions();
@@ -36,7 +36,7 @@ function pixelInputCheck(){ //verifies user input
 }
 
 function generatePixels(){  //generate new pixel divs under "grid"
-    for(var i = 0; i < GRID; i++){
+    for(let i = 0; i < GRID; i++){
         const div = document.createElement("div");
         div.className = "pixel";
         div.id = "p" + i;
